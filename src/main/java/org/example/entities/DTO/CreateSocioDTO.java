@@ -1,19 +1,17 @@
-package org.example.DTO;
+package org.example.entities.DTO;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class UpdateSocioDTO {
+public class CreateSocioDTO {
 
     private String nome;
     private String documento;
 
-    UpdateSocioDTO(String nome, String documento) {
+    public CreateSocioDTO(String nome, String documento) {
         setNome(nome);
         setDocumento(documento);
     }
-
-
 }
