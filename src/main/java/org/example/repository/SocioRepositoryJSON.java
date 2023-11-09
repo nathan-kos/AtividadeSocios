@@ -8,6 +8,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.example.entities.Socio;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Optional;
 import java.util.UUID;
@@ -130,4 +131,22 @@ public class SocioRepositoryJSON implements SocioRepositoryInterface{
         }
     }
 
+    @Override
+    public ArrayList<Socio> listar(){
+        try {
+            JsonNode jsonNode = mapper.readTree(file);
+            ArrayList<Socio> socios = new ArrayList<>();
+            if (jsonNode.isArray()) {
+                Iterator<JsonNode> elements = jsonNode.elements();
+                while (elements.hasNext()) {
+                    JsonNode element = elements.next();
+                    socios.add(mapper.treeToValue(element, Socio.class));
+                }
+            }
+            return socios;
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException("Não foi possível ler o arquivo");
+        }
+    }
 }

@@ -8,6 +8,7 @@ import org.example.repository.SocioRepositoryJSON;
 import org.example.util.NotFoundException;
 
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 
@@ -66,4 +67,8 @@ public class SocioService implements SocioServiceInterface {
         SRepository.cancelar(Csocio);
     }
 
+    @Override
+    public ArrayList<Socio> listarSocios() {
+        return SRepository.listar();
+    }
 }

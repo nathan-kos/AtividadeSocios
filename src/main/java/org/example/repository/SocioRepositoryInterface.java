@@ -2,6 +2,7 @@ package org.example.repository;
 
 import org.example.entities.Socio;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public interface SocioRepositoryInterface {
@@ -15,5 +16,7 @@ public interface SocioRepositoryInterface {
     Optional<Socio> buscarPorNumero(String numero);
 
     Socio atualizar(Socio socio);
+
+    ArrayList<Socio> listar();
 
 }

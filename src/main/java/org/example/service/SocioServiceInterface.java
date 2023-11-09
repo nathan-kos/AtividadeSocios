@@ -5,6 +5,8 @@ import org.example.entities.DTO.UpdateSocioDTO;
 import org.example.entities.Socio;
 import org.example.util.NotFoundException;
 
+import java.util.ArrayList;
+
 public interface SocioServiceInterface {
     Socio cadastrarSocio(CreateSocioDTO socio);
 
@@ -15,4 +17,6 @@ public interface SocioServiceInterface {
     Socio atualizarSocio(String numero, UpdateSocioDTO socio) throws NotFoundException;
 
     void cancelarSocio(String numero) throws NotFoundException;
+
+    ArrayList<Socio> listarSocios();
 }
