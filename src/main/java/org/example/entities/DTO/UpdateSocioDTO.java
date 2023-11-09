@@ -10,10 +10,9 @@ public class UpdateSocioDTO {
     private String nome;
     private String documento;
 
-    UpdateSocioDTO(String nome, String documento) {
+    public UpdateSocioDTO(String nome, String documento) {
         setNome(nome);
         setDocumento(documento);
     }
-
 
 }

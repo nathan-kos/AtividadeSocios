@@ -4,9 +4,12 @@ import org.example.entities.DTO.CreateSocioDTO;
 import org.example.entities.DTO.UpdateSocioDTO;
 import org.example.entities.Socio;
 import org.example.repository.SocioRepositoryInterface;
+import org.example.repository.SocioRepositoryJSON;
 import org.example.util.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class SocioService {
@@ -19,6 +22,13 @@ public class SocioService {
 
 
     public Socio cadastrarSocio(CreateSocioDTO socio) {
+
+        Optional<Socio> eSocio = SRepository.buscarPorDocumento(socio.getDocumento());
+
+        if (eSocio.isPresent()) {
+            throw new RuntimeException("Socio já cadastrado");
+        }
+
         Socio Nsocio = new Socio(socio.getNome(), socio.getDocumento());
 
         return SRepository.cadastrar(Nsocio);
@@ -36,8 +46,12 @@ public class SocioService {
 
         Socio Upsocio = SRepository.buscarPorNumero(numero).orElseThrow(() -> new NotFoundException("Socio não encontrado"));
 
-        Upsocio.setNome(socio.getNome());
-        Upsocio.setDocumento(socio.getDocumento());
+        if(socio.getNome() != null) {
+            Upsocio.setNome(socio.getNome());
+        }
+        if (socio.getDocumento() != null) {
+            Upsocio.setDocumento(socio.getDocumento());
+        }
 
         return SRepository.atualizar(Upsocio);
 
