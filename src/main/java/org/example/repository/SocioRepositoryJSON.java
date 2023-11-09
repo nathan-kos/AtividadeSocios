@@ -6,14 +6,12 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.example.entities.Socio;
-import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.util.Iterator;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository
 public class SocioRepositoryJSON implements SocioRepositoryInterface{
 
     private final File file;

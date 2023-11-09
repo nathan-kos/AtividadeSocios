@@ -6,13 +6,12 @@ import org.example.entities.Socio;
 import org.example.repository.SocioRepositoryInterface;
 import org.example.repository.SocioRepositoryJSON;
 import org.example.util.NotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 
 import java.util.Optional;
 
-@Service
-public class SocioService {
+
+public class SocioService implements SocioServiceInterface {
 
     private final SocioRepositoryInterface SRepository;
 
@@ -21,6 +20,7 @@ public class SocioService {
     }
 
 
+    @Override
     public Socio cadastrarSocio(CreateSocioDTO socio) {
 
         Optional<Socio> eSocio = SRepository.buscarPorDocumento(socio.getDocumento());
@@ -34,14 +34,17 @@ public class SocioService {
         return SRepository.cadastrar(Nsocio);
     }
 
+    @Override
     public Socio buscarPorDocumento(String documento) throws NotFoundException {
         return SRepository.buscarPorDocumento(documento).orElseThrow(() -> new NotFoundException("Socio não encontrado"));
     }
 
+    @Override
     public Socio buscarPorNumero(String numero) throws NotFoundException {
         return SRepository.buscarPorNumero(numero).orElseThrow(() -> new NotFoundException("Socio não encontrado"));
     }
 
+    @Override
     public Socio atualizarSocio(String numero, UpdateSocioDTO socio) throws NotFoundException {
 
         Socio Upsocio = SRepository.buscarPorNumero(numero).orElseThrow(() -> new NotFoundException("Socio não encontrado"));
@@ -57,6 +60,7 @@ public class SocioService {
 
     }
 
+    @Override
     public void cancelarSocio(String numero) throws NotFoundException {
         Socio Csocio = SRepository.buscarPorNumero(numero).orElseThrow(() -> new NotFoundException("Socio não encontrado"));
         SRepository.cancelar(Csocio);
