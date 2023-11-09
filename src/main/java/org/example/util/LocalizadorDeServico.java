@@ -7,11 +7,11 @@ import org.example.service.SocioServiceInterface;
 
 public class LocalizadorDeServico {
 
-    public static SocioRepositoryInterface socioRepository(){
+    public  SocioRepositoryInterface socioRepository(){
         return new SocioRepositoryJSON();
     }
 
-    public static SocioServiceInterface socioService(){
+    public  SocioServiceInterface socioService(){
         return new SocioService(socioRepository());
     }
 
