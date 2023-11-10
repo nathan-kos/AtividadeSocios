@@ -22,7 +22,6 @@ public class SocioRepositoryJSON implements SocioRepositoryInterface{
     public SocioRepositoryJSON() {
 
         String path = PropertiesReader.lerProperties().getProperty("json.file");
-        System.out.println(path + "aqui" );
 
         this.file = new File(path);
         if (!file.exists()) {
