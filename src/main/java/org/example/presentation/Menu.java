@@ -11,50 +11,56 @@ import java.util.Scanner;
 public class Menu {
 
     public void start() {
-        System.out.println("Bem vindo ao sistema de sócios do clube");
-        System.out.println("Escolha uma opção:");
-        System.out.println("1 - Cadastrar sócio");
-        System.out.println("2 - Cancelar sócio");
-        System.out.println("3 - Buscar sócio por documento");
-        System.out.println("4 - Buscar sócio por número");
-        System.out.println("5 - Atualizar sócio");
-        System.out.println("6 - Listar sócios");
-        System.out.println("7 - Sair");
 
-        int opcao = 0;
+        boolean continuar = true;
 
-        Scanner scanner = new Scanner(System.in);
-        opcao = scanner.nextInt();
-        scanner.nextLine();
+        while (continuar) {
 
-        switch (opcao) {
-            case 1:
-                cadastrarSocio();
-                break;
-            case 2:
-                cancelarSocio();
-                break;
-            case 3:
-                buscarSocioPorDocumento();
-                break;
-            case 4:
-                buscarSocioPorNumero();
-                break;
-            case 5:
-                atualizarSocio();
-                break;
-            case 6:
-                listarSocios();
-                break;
-            case 7:
-                System.out.println("Até logo!");
-                break;
-            default:
-                System.out.println("Opção inválida");
-                start();
-                break;
+            System.out.printf("%n%n%n%n");
+            System.out.println("Bem vindo ao sistema de sócios do clube");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Cadastrar sócio");
+            System.out.println("2 - Cancelar sócio");
+            System.out.println("3 - Buscar sócio por documento");
+            System.out.println("4 - Buscar sócio por número");
+            System.out.println("5 - Atualizar sócio");
+            System.out.println("6 - Listar sócios");
+            System.out.println("7 - Sair");
+
+            int opcao = 0;
+
+            Scanner scanner = new Scanner(System.in);
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    cadastrarSocio();
+                    break;
+                case 2:
+                    cancelarSocio();
+                    break;
+                case 3:
+                    buscarSocioPorDocumento();
+                    break;
+                case 4:
+                    buscarSocioPorNumero();
+                    break;
+                case 5:
+                    atualizarSocio();
+                    break;
+                case 6:
+                    listarSocios();
+                    break;
+                case 7:
+                    System.out.println("Até logo!");
+                    continuar = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+                    break;
+            }
         }
-
     }
 
     private void atualizarSocio() {
@@ -87,10 +93,6 @@ public class Menu {
             } catch (Exception e) {
                 System.out.println("Erro ao atualizar sócio: " + e.getMessage());
             }
-
-            start();
-
-
     }
 
     private void buscarSocioPorNumero() {
@@ -110,9 +112,6 @@ public class Menu {
         } catch (Exception e) {
             System.out.println("Erro ao buscar sócio: " + e.getMessage());
         }
-
-        start();
-
     }
 
     private void buscarSocioPorDocumento() {
@@ -132,9 +131,6 @@ public class Menu {
         } catch (Exception e) {
             System.out.println("Erro ao buscar sócio: " + e.getMessage());
         }
-
-        start();
-
     }
 
     private void cancelarSocio() {
@@ -150,9 +146,6 @@ public class Menu {
         }catch (Exception e) {
             System.out.println("Erro ao cancelar sócio: " + e.getMessage());
         }
-
-        start();
-
     }
 
     public void cadastrarSocio(){
@@ -174,8 +167,6 @@ public class Menu {
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar sócio: " + e.getMessage());
         }
-        
-        start();
     }
 
     public void listarSocios(){
@@ -190,9 +181,6 @@ public class Menu {
         } catch (Exception e) {
             System.out.println("Erro ao listar sócios: " + e.getMessage());
         }
-
-        start();
-
     }
 
 }
