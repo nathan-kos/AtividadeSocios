@@ -52,6 +52,13 @@ public class SocioService implements SocioServiceInterface {
         if(socio.getNome() != null) {
             Upsocio.setNome(socio.getNome());
         }
+
+        Socio eSocio = SRepository.buscarPorDocumento(socio.getDocumento()).orElse(null);
+
+        if (eSocio != null && !eSocio.getNumero().equals(numero)) {
+            throw new RuntimeException("Socio já cadastrado");
+        }
+
         if (socio.getDocumento() != null) {
             Upsocio.setDocumento(socio.getDocumento());
         }
