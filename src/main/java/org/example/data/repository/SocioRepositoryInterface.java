@@ -1,6 +1,6 @@
-package org.example.repository;
+package org.example.data.repository;
 
-import org.example.entities.Socio;
+import org.example.data.entities.Socio;
 
 import java.util.ArrayList;
 import java.util.Optional;

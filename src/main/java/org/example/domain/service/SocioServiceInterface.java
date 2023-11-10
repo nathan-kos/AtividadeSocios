@@ -1,8 +1,8 @@
-package org.example.service;
+package org.example.domain.service;
 
-import org.example.entities.DTO.CreateSocioDTO;
-import org.example.entities.DTO.UpdateSocioDTO;
-import org.example.entities.Socio;
+import org.example.domain.DTO.CreateSocioDTO;
+import org.example.domain.DTO.UpdateSocioDTO;
+import org.example.data.entities.Socio;
 import org.example.util.NotFoundException;
 
 import java.util.ArrayList;

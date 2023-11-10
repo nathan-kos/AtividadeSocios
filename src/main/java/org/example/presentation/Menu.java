@@ -1,10 +1,9 @@
 package org.example.presentation;
 
-import org.example.entities.DTO.CreateSocioDTO;
-import org.example.entities.DTO.UpdateSocioDTO;
-import org.example.entities.Socio;
-import org.example.service.SocioService;
-import org.example.service.SocioServiceInterface;
+import org.example.domain.DTO.CreateSocioDTO;
+import org.example.domain.DTO.UpdateSocioDTO;
+import org.example.data.entities.Socio;
+import org.example.domain.service.SocioServiceInterface;
 import org.example.util.LocalizadorDeServico;
 
 import java.util.Scanner;

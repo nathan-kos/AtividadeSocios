@@ -1,11 +1,11 @@
-package org.example.repository;
+package org.example.data.repository;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.example.entities.Socio;
+import org.example.data.entities.Socio;
 
 import java.io.File;
 import java.util.ArrayList;

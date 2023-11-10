@@ -1,4 +1,4 @@
-package org.example.entities.DTO;
+package org.example.domain.DTO;
 
 import lombok.Getter;
 import lombok.Setter;

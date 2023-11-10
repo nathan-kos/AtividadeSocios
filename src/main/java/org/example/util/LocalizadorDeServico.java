@@ -1,9 +1,9 @@
 package org.example.util;
 
-import org.example.repository.SocioRepositoryInterface;
-import org.example.repository.SocioRepositoryJSON;
-import org.example.service.SocioService;
-import org.example.service.SocioServiceInterface;
+import org.example.data.repository.SocioRepositoryInterface;
+import org.example.data.repository.SocioRepositoryJSON;
+import org.example.domain.service.SocioService;
+import org.example.domain.service.SocioServiceInterface;
 
 public class LocalizadorDeServico {
 
