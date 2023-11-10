@@ -1,7 +1,7 @@
 package org.example.domain.service;
 
-import org.example.domain.DTO.CreateSocioDTO;
-import org.example.domain.DTO.UpdateSocioDTO;
+import org.example.presentation.DTO.CreateSocioDTO;
+import org.example.presentation.DTO.UpdateSocioDTO;
 import org.example.data.entities.Socio;
 import org.example.util.NotFoundException;
 
