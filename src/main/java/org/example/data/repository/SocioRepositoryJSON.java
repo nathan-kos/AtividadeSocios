@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.example.data.entities.Socio;
+import org.example.util.PropertiesReader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -19,7 +20,11 @@ public class SocioRepositoryJSON implements SocioRepositoryInterface{
     private final ObjectMapper mapper;
 
     public SocioRepositoryJSON() {
-        this.file = new File("socios.json");
+
+        String path = PropertiesReader.lerProperties().getProperty("json.file");
+        System.out.println(path + "aqui" );
+
+        this.file = new File(path);
         if (!file.exists()) {
             try {
                 file.createNewFile();
