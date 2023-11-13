@@ -68,9 +68,9 @@ public class SocioService implements SocioServiceInterface {
     }
 
     @Override
-    public void cancelarSocio(String numero) throws NotFoundException {
+    public void deletarSocio(String numero) throws NotFoundException {
         Socio Csocio = SRepository.buscarPorNumero(numero).orElseThrow(() -> new NotFoundException("Socio não encontrado"));
-        SRepository.cancelar(Csocio);
+        SRepository.deletar(Csocio);
     }
 
     @Override

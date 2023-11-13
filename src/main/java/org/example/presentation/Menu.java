@@ -20,14 +20,14 @@ public class Menu {
             System.out.println("Bem vindo ao sistema de sócios do clube");
             System.out.println("Escolha uma opção:");
             System.out.println("1 - Cadastrar sócio");
-            System.out.println("2 - Cancelar sócio");
+            System.out.println("2 - Deletar sócio");
             System.out.println("3 - Buscar sócio por documento");
             System.out.println("4 - Buscar sócio por número");
             System.out.println("5 - Atualizar sócio");
             System.out.println("6 - Listar sócios");
             System.out.println("7 - Sair");
 
-            int opcao = 0;
+            int opcao;
 
             Scanner scanner = new Scanner(System.in);
             opcao = scanner.nextInt();
@@ -38,7 +38,7 @@ public class Menu {
                     cadastrarSocio();
                     break;
                 case 2:
-                    cancelarSocio();
+                    deletarSocio();
                     break;
                 case 3:
                     buscarSocioPorDocumento();
@@ -133,7 +133,7 @@ public class Menu {
         }
     }
 
-    private void cancelarSocio() {
+    private void deletarSocio() {
 
         System.out.println("Digite o número do sócio:");
         Scanner scanner = new Scanner(System.in);

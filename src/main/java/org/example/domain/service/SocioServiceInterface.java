@@ -16,7 +16,7 @@ public interface SocioServiceInterface {
 
     Socio atualizarSocio(String numero, UpdateSocioDTO socio) throws NotFoundException;
 
-    void cancelarSocio(String numero) throws NotFoundException;
+    void deletarSocio(String numero) throws NotFoundException;
 
     ArrayList<Socio> listarSocios();
 }

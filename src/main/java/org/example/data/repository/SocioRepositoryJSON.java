@@ -57,7 +57,7 @@ public class SocioRepositoryJSON implements SocioRepositoryInterface{
     }
 
     @Override
-    public void cancelar(Socio socio) {
+    public void deletar(Socio socio) {
         try {
             JsonNode jsonNode = mapper.readTree(file);
             Iterator<JsonNode> elements = jsonNode.elements();

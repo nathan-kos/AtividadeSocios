@@ -9,7 +9,7 @@ public interface SocioRepositoryInterface {
 
     Socio cadastrar(Socio socio);
 
-    void cancelar(Socio socio);
+    void deletar(Socio socio);
 
     Optional<Socio> buscarPorDocumento(String documento);
 
